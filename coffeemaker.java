@@ -20,12 +20,17 @@ public class coffeemaker
 		while(!input.equals("d"))
 		//for(int i=0;i<6;++i)
 		{
-			if(move.goNorth()==true)
+			if(move.goSouth()!=false&&move.goNorth()!=false)
 			{
-				if(move.goSouth()!=false)
-				{
-					System.out.println("\nYou see a "+ room_descriptions[newMove.roomNumber()] + ".\nIt has a "+ room_decor[newMove.roomNumber()] + ".\nA "+ north_doors[newMove.roomNumber()]+ " leads North.\nA "+ south_doors([newMove.roomNumber()])+" leads South.");
-				}
+				System.out.println("\nYou see a "+ room_descriptions[newMove.roomNumber()] + ".\nIt has a "+ room_decor[newMove.roomNumber()] + ".\nA "+ north_doors[newMove.roomNumber()]+ " leads North.\nA "+ south_doors([newMove.roomNumber()])+" leads South.");
+			}	
+			else if(move.goSouth()==false)				
+			{
+				
+			}
+			else if(move.goNorth()==false)				
+			{
+				
 			}
 			
 			System.out.println(s);
