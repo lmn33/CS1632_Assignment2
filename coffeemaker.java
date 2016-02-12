@@ -23,7 +23,7 @@ public class coffeemaker
 			if(move.goSouth()!=false&&move.goNorth()!=false)
 			{
 				System.out.println("\nYou see a "+ room_descriptions[newMove.roomNumber()] + ".\nIt has a "+ room_decor[newMove.roomNumber()] + ".\nA "+ north_doors[newMove.roomNumber()]+ " leads North.\nA "+ south_doors([newMove.roomNumber()])+" leads South.");
-			}	
+			}
 			else if(move.goSouth()==false)				
 			{
 				
