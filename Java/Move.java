@@ -1,3 +1,5 @@
+package Java;
+
 public class Move
 {
 	private int numberOfRooms;
