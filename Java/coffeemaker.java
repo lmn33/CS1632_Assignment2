@@ -2,6 +2,7 @@ package Java;
 
 import java.util.*;
 import java.io.*;
+import Java.Move;
 
 public class coffeemaker
 {	
@@ -22,15 +23,15 @@ public class coffeemaker
 		while(!input.equals("d"))
 		//for(int i=0;i<6;++i)
 		{
-			if(move.goSouth()!=false&&move.goNorth()!=false)
+			if(nextMove.goSouth()!=false&&nextMove.goNorth()!=false)
 			{
-				System.out.println("\nYou see a "+ room_descriptions[newMove.roomNumber()] + ".\nIt has a "+ room_decor[newMove.roomNumber()] + ".\nA "+ north_doors[newMove.roomNumber()]+ " leads North.\nA "+ south_doors([newMove.roomNumber()])+" leads South.");
+				System.out.println("\nYou see a "+ room_descriptions[nextMove.roomNumber()] + ".\nIt has a "+ room_decor[nextMove.roomNumber()] + ".\nA "+ north_doors[nextMove.roomNumber()]+ " leads North.\nA "+ south_doors[nextMove.roomNumber()]+" leads South.");
 			}
-			else if(move.goSouth()==false)				
+			else if(nextMove.goSouth()==false)
 			{
 				
 			}
-			else if(move.goNorth()==false)				
+			else if(nextMove.goNorth()==false)
 			{
 				
 			}
@@ -39,7 +40,7 @@ public class coffeemaker
 			input = reader.next();
 			if(input.toLowerCase().equals("s"))
 			{
-				if(!newMove.goSouth())
+				if(!nextMove.goSouth())
 				{
 					System.out.println("\nThere is no door to go South");
 				}
@@ -50,11 +51,11 @@ public class coffeemaker
 			}
 			else if(input.toLowerCase().equals("s"))
 			{
-				newMove.goSouth();
+				nextMove.goSouth();
 			}
 			else if(input.toLowerCase().equals("n"))
 			{
-				newMove.goSouth();
+				nextMove.goSouth();
 			}
 			else if(input.toLowerCase().equals("i"))
 			{
@@ -62,7 +63,7 @@ public class coffeemaker
 			}
 			else if(input.toLowerCase().equals("l"))
 			{
-				newDrink.look(newMove.roomNumber());
+				newDrink.look(nextMove.roomNumber());
 			}
 			else if(input.toLowerCase().equals("d"))
 			{
