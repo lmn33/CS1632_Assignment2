@@ -48,14 +48,11 @@ public class coffeemaker
 			}
 			else if(input.toLowerCase().equals("s"))
 			{
-				if(newMove.goSouth())
-				{
-					
-				}
+				newMove.goSouth();
 			}
 			else if(input.toLowerCase().equals("n"))
 			{
-				
+				newMove.goSouth();
 			}
 			else if(input.toLowerCase().equals("i"))
 			{
