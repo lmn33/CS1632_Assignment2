@@ -38,7 +38,8 @@ public class coffeemaker
 			
 			System.out.println(s);
 			input = reader.next();
-			if(input.toLowerCase().equals("s"))
+			input=input.toLowerCase();
+			if(input.equals("s"))
 			{
 				if(!nextMove.goSouth())
 				{
@@ -49,27 +50,27 @@ public class coffeemaker
 					
 				}
 			}
-			else if(input.toLowerCase().equals("s"))
+			else if(input.equals("s"))
 			{
 				nextMove.goSouth();
 			}
-			else if(input.toLowerCase().equals("n"))
+			else if(input.equals("n"))
 			{
 				nextMove.goSouth();
 			}
-			else if(input.toLowerCase().equals("i"))
+			else if(input.equals("i"))
 			{
 				
 			}
-			else if(input.toLowerCase().equals("l"))
+			else if(input.equals("l"))
 			{
 				newDrink.look(nextMove.roomNumber());
 			}
-			else if(input.toLowerCase().equals("d"))
+			else if(input.equals("d"))
 			{
 				newDrink.drinkCoffee();
 			}
-			else if(input.toLowerCase().equals("h"))
+			else if(input.equals("h"))
 			{
 					
 			}

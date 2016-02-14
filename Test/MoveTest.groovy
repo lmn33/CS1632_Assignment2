@@ -10,12 +10,12 @@ class MoveTest extends GroovyTestCase {
     void testGoNorth()
     {
         Move testMove=new Move();
-        assertFalse(testMove.goNorth(0));
+        assertTrue(testMove.goNorth(0));
     }
 
     void testGoSouth()
     {
-
+        Move testSouth=new Move();
     }
 
     void testRoomNumber()
