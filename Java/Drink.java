@@ -1,7 +1,5 @@
-package Java;
 
-public class Drink
-{
+public class Drink {
 	private boolean hasCream;
 	private boolean hasSugar;
 	private boolean hasCoffee;
@@ -15,24 +13,28 @@ public class Drink
 	
 	public void look(int check)
 	{
+		
 		if(check==0)
 		{
 			hasCream=true;
-			System.out.println("You've found Cream :D");
+			System.out.println("There might be something here...");
+			System.out.println("You've found some creamy Cream!");
 		}
 		else if(check==2)
 		{
 			hasCoffee=true;
-			System.out.println("You've found Coffee :D");
+			System.out.println("There might be something here...");
+			System.out.println("You've found some caffeinated Coffee!");
 		}
 		else if(check==5)
 		{
 			hasSugar=true;
-			System.out.println("You've found sugar :D");
+			System.out.println("There might be something here...");
+			System.out.println("You've found some sweet Sugar!");
 		}
 		else
 		{
-				System.out.println("You don't see anything of interest");
+				System.out.println("You don't see anything out of the ordinary.");
 		}
 	}
 	
@@ -40,23 +42,54 @@ public class Drink
 	{
 		if(hasSugar&&hasCream&&hasCoffee)
 		{
-			System.out.println("You win. You've made your coffee for tonight");
+			System.out.println("You drink the beverage and are ready to study. ");
+			System.out.println("You win!");
 			return true;
 		}
-		else if(hasSugar==false)
+		else if(hasSugar && hasCream)
 		{
-			System.out.println("You fail, you don't have sugar");
+			System.out.println("You drink the sweetened Cream, but without caffeine, you can not study.");
+			System.out.println("You lose!");
+		}
+		else if(hasCream && hasCoffee)
+		{
+			System.out.println("Without the Sugar, the Coffee is too bitter. You can not study.");
+			System.out.println("You lose.");
 			return false;
 		}
-		else if(hasCream==false)
+		else if(hasSugar==true)
 		{
-			System.out.println("You fail, you don't have cream");
+			System.out.println("You eat the sugar, but without caffeine, you can not study.");
+			System.out.println("You lose.");
 			return false;
 		}
-		else if(hasCoffee==false)
+		//else if(hasCream==false)
+		else if(hasCream == true)
+		{
+			System.out.println("You drink the Cream, but without caffeine, you can not study.");
+			System.out.println("You lose!");
+			return false;
+		}
+		else if(hasCoffee==true)
 		{
 			System.out.println("You fail, you don't have coffee");
 			return false;
 		}
+		else if(hasSugar == false && hasCream == false && hasCoffee == false){
+			System.out.println("You drink the air, as you have no Coffee, Sugar or Cream.");
+			System.out.println("The air is invigorating, but not invigorating enough. You can not study.");
+			System.out.println("You lose!");
+			return false;
+		}
+		return false;
+	}
+	public boolean getSugar(){
+		return hasSugar;
+	}
+	public boolean getCoffee(){
+		return hasCoffee;
+	}
+	public boolean getCream(){
+		return hasCream;
 	}
 }
