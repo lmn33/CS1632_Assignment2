@@ -5,8 +5,8 @@ import static org.mockito.Mockito.*;
 
 
 public class coffeeTest {
-	Drink drinkTester;
-	Move moveTester;
+	Drink drinkTester;//used to mock
+	Move moveTester;//used to mock
 	@Test
 	public void testVerifyDrink()  
 	{
@@ -14,6 +14,13 @@ public class coffeeTest {
 		  drinkTester = mock(Drink.class);
 		  when(drinkTester.getSugar()).thenReturn(true);
 	}
+	@Test
+	public void testVerifyCream()
+	{
+		drinkTester = mock(Drink.class);
+		when(drinkTester.getCream()).thenReturn(true);
+	}
+	
 	@Test
 	public void testVerifyMove()  
 	{
@@ -34,8 +41,8 @@ public class coffeeTest {
 	public void testIsSugarReturnsFalse()  
 	{
 		  // create and configure mock
-		  drinkTester = mock(Drink.class);
-		  when(moveTester.goNorth()).thenReturn(true);
+		  moveTester = mock(Move.class);
+		  when(moveTester.goNorth()).thenReturn(false);
 	}
 	
 	@Test
@@ -43,6 +50,20 @@ public class coffeeTest {
 		Drink drink = new Drink();
 		assertFalse(drink.drinkCoffee());
 		}
+	
+	@Test
+	public void testDrinkSugarCreamCoffeeTester()
+	{
+		Drink drink = mock(Drink.class);
+		when (drink.getCoffee()).thenReturn(true);
+	}
+	
+	@Test
+	public void testDrinkSugarTester()
+	{
+		Drink drink = mock(Drink.class);
+		when (drink.getSugar()).thenReturn(true);
+	}
 	
 	@Test
 	public void testDrinkSugarCreamCoffee()

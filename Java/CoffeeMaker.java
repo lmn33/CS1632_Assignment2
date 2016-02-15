@@ -42,6 +42,7 @@ public class CoffeeMaker {
 			
 			System.out.println(s);
 			input = reader.next();
+			input=input.toLowerCase();
 			if(input.toLowerCase().equals("s"))
 			{
 				if(!nextMove.goSouth())
