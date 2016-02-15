@@ -1,9 +1,43 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
+//import org.junit.Test;
+import static org.mockito.Mockito.*;
+
 
 public class coffeeTest {
-
+	Drink drinkTester;
+	Move moveTester;
+	@Test
+	public void testVerifyDrink()  
+	{
+		  // create and configure mock
+		  drinkTester = mock(Drink.class);
+		  when(drinkTester.getSugar()).thenReturn(true);
+	}
+	@Test
+	public void testVerifyMove()  
+	{
+		  // create and configure mock
+		  moveTester = mock(Move.class);
+		  when(moveTester.goNorth()).thenReturn(true);
+	}
+	
+	@Test
+	public void testVerifyMoveNorth()  
+	{
+		  // create and configure mock
+		  moveTester = mock(Move.class);
+		  when(moveTester.north()).thenReturn(true);
+	}
+	
+	@Test
+	public void testIsSugarReturnsFalse()  
+	{
+		  // create and configure mock
+		  drinkTester = mock(Drink.class);
+		  when(moveTester.goNorth()).thenReturn(true);
+	}
+	
 	@Test
 	public void testDrinkNoIngredients(){
 		Drink drink = new Drink();
@@ -249,5 +283,5 @@ public class coffeeTest {
 		drink.look(5);
 		assertFalse(drink.getCoffee());
 	}
-
 }
+
