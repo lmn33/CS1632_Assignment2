@@ -3,14 +3,14 @@ public class Drink {
 	private boolean hasCream;
 	private boolean hasSugar;
 	private boolean hasCoffee;
-	
+	//Drink object
 	public Drink()
 	{
 		hasSugar=false;
 		hasCream=false;
 		hasCoffee=false;
 	}
-	
+	//The look operation
 	public void look(int check)
 	{
 		
@@ -37,7 +37,7 @@ public class Drink {
 				System.out.println("You don't see anything out of the ordinary.");
 		}
 	}
-	
+	//will return true if you have everything else return false
 	public boolean drinkCoffee()
 	{
 		if(hasSugar&&hasCream&&hasCoffee)
@@ -83,12 +83,15 @@ public class Drink {
 		}
 		return false;
 	}
+	//sees if you have sugar
 	public boolean getSugar(){
 		return hasSugar;
 	}
+	//sees if you have coffee
 	public boolean getCoffee(){
 		return hasCoffee;
 	}
+	//sees if you have cream
 	public boolean getCream(){
 		return hasCream;
 	}
