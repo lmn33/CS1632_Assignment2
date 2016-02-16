@@ -8,6 +8,7 @@ public class coffeeTest {
 	Drink drinkTester;
 	Move moveTester;
 	//Mocks Drink and stubs getSugar
+
 	@Test
 	public void testVerifyDrink()  
 	{
@@ -16,6 +17,13 @@ public class coffeeTest {
 		  when(drinkTester.getSugar()).thenReturn(true);
 	}
 	//Mocks Move and stubs goNorth
+	@Test
+	public void testVerifyCream()
+	{
+		drinkTester = mock(Drink.class);
+		when(drinkTester.getCream()).thenReturn(true);
+	}
+	
 	@Test
 	public void testVerifyMove()  
 	{
@@ -36,8 +44,8 @@ public class coffeeTest {
 	public void testIsSugarReturnsFalse()  
 	{
 		  // create and configure mock
-		  drinkTester = mock(Drink.class);
-		  when(moveTester.goNorth()).thenReturn(true);
+		  moveTester = mock(Move.class);
+		  when(moveTester.goNorth()).thenReturn(false);
 	}
 	//Makes sure oyu fail when you have nothing and drink
 	@Test
@@ -46,6 +54,20 @@ public class coffeeTest {
 		assertFalse(drink.drinkCoffee());
 		}
 	//Makes sure you pass when you have everything
+	@Test
+	public void testDrinkSugarCreamCoffeeTester()
+	{
+		Drink drink = mock(Drink.class);
+		when (drink.getCoffee()).thenReturn(true);
+	}
+	
+	@Test
+	public void testDrinkSugarTester()
+	{
+		Drink drink = mock(Drink.class);
+		when (drink.getSugar()).thenReturn(true);
+	}
+	
 	@Test
 	public void testDrinkSugarCreamCoffee()
 	{
